@@ -1,0 +1,625 @@
+object frmMain: TfrmMain
+  Left = 605
+  Height = 526
+  Top = 146
+  Width = 869
+  Caption = 'TableGrid Example'
+  ClientHeight = 526
+  ClientWidth = 869
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poScreenCenter
+  LCLVersion = '1.6.2.0'
+  object aStringGrid: TStringGrid
+    Left = 17
+    Height = 234
+    Top = 16
+    Width = 826
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    ColCount = 7
+    FixedCols = 0
+    TabOrder = 0
+    ColWidths = (
+      78
+      145
+      117
+      108
+      160
+      64
+      103
+    )
+  end
+  object PageControl1: TPageControl
+    Left = 17
+    Height = 248
+    Top = 259
+    Width = 826
+    ActivePage = TabSheet1
+    Anchors = [akLeft, akRight, akBottom]
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'Basic Operations'
+      ClientHeight = 220
+      ClientWidth = 818
+      object Button1: TButton
+        Left = 16
+        Height = 25
+        Top = 28
+        Width = 124
+        Caption = 'Create TableGrid'
+        OnClick = Button1Click
+        TabOrder = 0
+      end
+      object Button2: TButton
+        Left = 155
+        Height = 25
+        Top = 28
+        Width = 121
+        Caption = 'Destroy TableGrid'
+        OnClick = Button2Click
+        TabOrder = 1
+      end
+      object Button3: TButton
+        Left = 291
+        Height = 25
+        Top = 28
+        Width = 116
+        Caption = 'Define Header'
+        OnClick = Button3Click
+        TabOrder = 2
+      end
+      object Button5: TButton
+        Left = 422
+        Height = 25
+        Top = 28
+        Width = 116
+        Caption = 'Clear'
+        OnClick = Button5Click
+        TabOrder = 3
+      end
+      object Button4: TButton
+        Left = 550
+        Height = 25
+        Top = 28
+        Width = 116
+        Caption = 'Populate'
+        OnClick = Button4Click
+        TabOrder = 4
+      end
+      object Button32: TButton
+        Left = 11
+        Height = 25
+        Top = 64
+        Width = 133
+        Caption = 'Register Image Column'
+        OnClick = Button32Click
+        TabOrder = 5
+      end
+      object Button6: TButton
+        Left = 155
+        Height = 25
+        Top = 64
+        Width = 121
+        Caption = 'Sort by Name'
+        OnClick = Button6Click
+        TabOrder = 6
+      end
+      object Button7: TButton
+        Left = 291
+        Height = 25
+        Top = 64
+        Width = 116
+        Caption = 'Sort by Sector'
+        OnClick = Button7Click
+        TabOrder = 7
+      end
+      object Button8: TButton
+        Left = 422
+        Height = 25
+        Top = 63
+        Width = 116
+        Caption = 'Sort by Sector, Name'
+        OnClick = Button8Click
+        TabOrder = 8
+      end
+      object Button15: TButton
+        Left = 550
+        Height = 25
+        Top = 64
+        Width = 116
+        Caption = 'Fit Column to Grid'
+        OnClick = Button15Click
+        TabOrder = 9
+      end
+      object Button9: TButton
+        Left = 16
+        Height = 25
+        Top = 103
+        Width = 124
+        Caption = 'Begin Update'
+        OnClick = Button9Click
+        TabOrder = 10
+      end
+      object Button17: TButton
+        Left = 155
+        Height = 25
+        Top = 103
+        Width = 121
+        Caption = 'Mass populate'
+        OnClick = Button17Click
+        TabOrder = 11
+      end
+      object Button10: TButton
+        Left = 291
+        Height = 25
+        Top = 103
+        Width = 116
+        Caption = 'Clear Update'
+        OnClick = Button10Click
+        TabOrder = 12
+      end
+      object Button11: TButton
+        Left = 422
+        Height = 25
+        Top = 103
+        Width = 116
+        Caption = 'Commit Update'
+        OnClick = Button11Click
+        TabOrder = 13
+      end
+      object Button12: TButton
+        Left = 550
+        Height = 25
+        Top = 103
+        Width = 116
+        Caption = 'Rollback Update'
+        OnClick = Button12Click
+        TabOrder = 14
+      end
+      object Button13: TButton
+        Left = 283
+        Height = 25
+        Top = 141
+        Width = 132
+        Caption = 'Update Column Name'
+        OnClick = Button13Click
+        TabOrder = 15
+      end
+      object Button14: TButton
+        Left = 422
+        Height = 25
+        Top = 141
+        Width = 116
+        Caption = 'Remove Line'
+        OnClick = Button14Click
+        TabOrder = 16
+      end
+      object Button16: TButton
+        Left = 550
+        Height = 25
+        Top = 143
+        Width = 116
+        Caption = 'Swap Columns'
+        OnClick = Button16Click
+        TabOrder = 17
+      end
+      object edName: TEdit
+        Left = 35
+        Height = 23
+        Top = 143
+        Width = 233
+        TabOrder = 18
+      end
+      object chAllowSorting: TCheckBox
+        Left = 27
+        Height = 19
+        Top = 183
+        Width = 91
+        Caption = 'Allow Sorting'
+        Checked = True
+        OnChange = chAllowSortingChange
+        State = cbChecked
+        TabOrder = 19
+      end
+      object chAllowReordering: TCheckBox
+        Left = 131
+        Height = 19
+        Top = 183
+        Width = 157
+        Caption = 'Allow reordering columns'
+        Checked = True
+        OnChange = chAllowReorderingChange
+        State = cbChecked
+        TabOrder = 20
+      end
+      object chAllowResizing: TCheckBox
+        Left = 291
+        Height = 19
+        Top = 184
+        Width = 142
+        Caption = 'Allow resizing columns'
+        Checked = True
+        OnChange = chAllowResizingChange
+        State = cbChecked
+        TabOrder = 21
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Editing'
+      ClientHeight = 220
+      ClientWidth = 818
+      object Button18: TButton
+        Left = 24
+        Height = 25
+        Top = 24
+        Width = 139
+        Caption = 'Register Id for Editing'
+        OnClick = Button18Click
+        TabOrder = 0
+      end
+      object Button20: TButton
+        Left = 176
+        Height = 25
+        Top = 24
+        Width = 139
+        Caption = 'Register Name for Editing'
+        OnClick = Button20Click
+        TabOrder = 1
+      end
+      object Button22: TButton
+        Left = 328
+        Height = 25
+        Top = 24
+        Width = 139
+        Caption = 'Register Sector for Editing'
+        OnClick = Button22Click
+        TabOrder = 2
+      end
+      object Button24: TButton
+        Left = 480
+        Height = 25
+        Top = 24
+        Width = 139
+        Caption = 'Register Phone for Editing'
+        OnClick = Button24Click
+        TabOrder = 3
+      end
+      object Button28: TButton
+        Left = 24
+        Height = 25
+        Top = 64
+        Width = 139
+        Caption = 'Register E-Mail for Editing'
+        OnClick = Button28Click
+        TabOrder = 4
+      end
+      object Button19: TButton
+        Left = 176
+        Height = 25
+        Top = 64
+        Width = 139
+        Caption = 'Register C.E. for Editing'
+        OnClick = Button19Click
+        TabOrder = 5
+      end
+      object Button21: TButton
+        Left = 328
+        Height = 25
+        Top = 64
+        Width = 139
+        Caption = 'Begin Edit'
+        OnClick = Button21Click
+        TabOrder = 6
+      end
+      object Button23: TButton
+        Left = 480
+        Height = 25
+        Top = 64
+        Width = 139
+        Caption = 'End Edit'
+        OnClick = Button23Click
+        TabOrder = 7
+      end
+      object Button25: TButton
+        Left = 24
+        Height = 25
+        Top = 104
+        Width = 139
+        Caption = 'Insert Blank Line'
+        OnClick = Button25Click
+        TabOrder = 8
+      end
+      object Button26: TButton
+        Left = 176
+        Height = 25
+        Top = 104
+        Width = 139
+        Caption = 'Check for Errors'
+        OnClick = Button26Click
+        TabOrder = 9
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'More'
+      ClientHeight = 220
+      ClientWidth = 818
+      object Button27: TButton
+        Left = 40
+        Height = 25
+        Top = 32
+        Width = 89
+        Caption = 'Save To File'
+        OnClick = Button27Click
+        TabOrder = 0
+      end
+      object edSearchText: TEdit
+        Left = 40
+        Height = 23
+        Top = 80
+        Width = 193
+        TabOrder = 1
+      end
+      object Button29: TButton
+        Left = 248
+        Height = 25
+        Top = 80
+        Width = 75
+        Caption = 'Find Text'
+        OnClick = Button29Click
+        TabOrder = 2
+      end
+      object Button30: TButton
+        Left = 152
+        Height = 25
+        Top = 32
+        Width = 89
+        Caption = 'Set Title Font'
+        OnClick = Button30Click
+        TabOrder = 3
+      end
+      object Button31: TButton
+        Left = 264
+        Height = 25
+        Top = 32
+        Width = 89
+        Caption = 'Read Dataset'
+        OnClick = Button31Click
+        TabOrder = 4
+      end
+      object Button33: TButton
+        Left = 368
+        Height = 25
+        Top = 32
+        Width = 121
+        Caption = 'Configure Odd Color'
+        OnClick = Button33Click
+        TabOrder = 5
+      end
+      object Button34: TButton
+        Left = 504
+        Height = 25
+        Top = 32
+        Width = 121
+        Caption = 'Configure Even Color'
+        OnClick = Button34Click
+        TabOrder = 6
+      end
+    end
+  end
+  object ImStatus: TImageList
+    left = 648
+    top = 456
+    Bitmap = {
+      4C69020000001000000010000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00DFE3D9FF5D835CFF4B8E56FF4E994EFF629054FF698DA7FF1D58
+      87FF608AABFFBDCFDCFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF0035A052FF5EB779FFBFE9C2FFAEE4B6FF6DD180FF479453FFEFF7
+      FBFF3684BBFF608AABFFFFFFFF00FEFEFDFF9A9A64FF34A54CFF31A64CFF31A6
+      4DFF30A64DFF82C296FFC3EBC6FFC9EDCBFFB9E9BFFFB7E7BCFFA0B4C0FF86BC
+      E2FF2E72A4FFA8BFD1FFFFFFFF00FAF8F6FF629255FFBDE9C0FFB8E7BCFFB7E7
+      BCFFC1EBC3FFC6ECC8FFA8E3B0FFBAE8BEFF99DFA4FFA7DC9EFF356E97FF8FC1
+      E4FF215F8FFFE8EEF3FFFFFFFF00F0E9E0FF4B9656FFA1E0A9FF64CF78FF64CF
+      78FF84D892FF97DEA3FFB0E6B7FFB2E6B7FF98DFA3FF8ECF96FF3579ACFF6EAF
+      DBFF1D5887FFFFFFFF00FFFFFF00CBC2B1FF479A5CFFA2E1ABFF66CF7AFF68CF
+      7CFF84D892FF9BDFA5FFB6E7BAFFA8E3B0FF95DEA1FF9DC9A2FF428CC0FF7DB7
+      DFFF1D5887FFFFFFFF00FFFFFF00C4AD85FFA0D3A9FF90DB9BFF6AD07DFF6CD1
+      7EFF86D994FF9EE0A7FFC5ECC7FFB4E6B9FFB0E6B7FF8DAB90FF56A2D6FF4692
+      C7FF43749BFFFFFFFF00FFFFFF00B49D59FFAAE3B0FF63CE77FF5FCD74FF80D6
+      8EFFA7E3AFFFB4E7B9FFA3E0ABFF68C575FF78C771FFACB3ACFF56A2D6FF3A7E
+      B0FF8BA9C1FFFFFFFF00FFFFFF00829D4BFF9BDEA5FFA3E0AAFFA3E0AAFFABE3
+      B1FF6ACD7BFF35B34CFF6FAA68FFD3E7C1FFC5CC98FF161D32FF539ED4FF2B6A
+      9AFFC8D6E2FFFFFFFF00FFFFFF006F955BFF3CA345FF33B247FF33B147FF38A5
+      47FF558B4CFFFFFFFF00FFFFFF00FFFFFF00B4C7D7FF2C6B9CFF56A2D6FF1D58
+      87FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF007EA0BBFF3C80B1FF56A2D6FF1D58
+      87FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00407299FF4D97CAFF56A2D6FF1D58
+      87FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001D5887FF56A2D6FF458CBEFF608A
+      ABFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF001D5887FF56A2D6FF387BACFF95B0
+      C7FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF007A9DB8FF1D5887FF7A9DB8FFF2F5
+      F8FFFFFFFF00FFFFFF00FFFFFF00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBEE
+      FFFFB5C3FDFF7C94FAFF6C86F7FF6A84F5FF778EF5FFB1BEF8FFE9ECFDFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCED7FDFF778E
+      FAFF6E83EEFF92A6F4FFA0B4F8FFA0B4F8FF91A6F3FF687DE9FF6981EDFFC8D1
+      F8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCED7FDFF6D86F8FF8497
+      F1FFA9BDFBFF8AA3F8FF6B89F6FF6B89F6FF89A2F8FFA8BCFAFF7F92ECFF5972
+      E5FFC6CEF6FFFFFFFFFFFFFFFFFFFFFFFFFFEBEEFEFF758CF7FF8397F0FFA9BD
+      FBFF6382F5FF6382F5FFFFFFFFFFFFFFFFFF617EF3FF607CF3FFA6B9F9FF7B8D
+      EAFF5C74E1FFE7EAFAFFFFFFFFFFFFFFFFFFB2BFFAFF6C81ECFFA9BDFBFF6382
+      F5FF6281F5FF6280F4FFFFFFFFFFFFFFFFFF5F7AF1FF5F78F0FF5D76EFFFA5B5
+      F8FF5D70DDFFA2AFEBFFFFFFFFFFFFFFFFFF768DF3FF91A6F3FF88A1F8FF6280
+      F4FF617EF3FF607CF3FFFFFFFFFFFFFFFFFF5D76EFFF5C73EEFF5B70ECFF8293
+      F1FF8998ECFF5970D8FFFFFFFFFFFFFFFFFF617BEEFFA1B6F8FF6784F4FF607C
+      F3FF5F7AF1FF5F78F0FFFFFFFFFFFFFFFFFF5B70ECFF5A6EEBFF596CEAFF5F6F
+      E9FF9BA8F1FF4159D0FFFFFFFFFFFFFFFFFF5D76EAFFA0B3F7FF6580F2FF5F78
+      F0FF5D76EFFF5C73EEFFD3D9FAFFFFFFFFFF596CEAFF5869E8FF5767E7FF5D6C
+      E7FF99A5F1FF3C55CCFFFFFFFFFFFFFFFFFF6A82E9FF8E9FF0FF8499F4FF5C73
+      EEFF5B70ECFF5A6EEBFF909DF1FFA6AFF3FF5767E7FF5665E6FF5562E5FF7D89
+      EBFF8591E7FF4E64CEFFFFFFFFFFFFFFFFFFA8B4F0FF6073E0FFA4B3F7FF5A6E
+      EBFF596CEAFF5869E8FFFFFFFFFFFFFFFFFF5562E5FF5461E3FF535FE2FF9FA9
+      F2FF5061D1FF97A4E1FFFFFFFFFFFFFFFFFFE7EAFAFF5970DEFF7888E6FFA3B0
+      F5FF5767E7FF5665E6FF8992EDFF8892ECFF535FE2FF525DE1FF9FA9F2FF6F7D
+      DDFF4157C6FFE2E6F6FFFFFFFFFFFFFFFFFFFFFFFFFFC1CAF1FF4760D5FF7584
+      E3FFA1ACF4FF7F8BECFF5C67E4FF5B66E3FF7D87EAFF9FA8F1FF6F7CDDFF324B
+      C2FFB9C1EAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBFC7EFFF4C63
+      D1FF5264D4FF8490E7FF95A0EEFF959FEDFF838EE5FF4C5DCEFF3D54C3FFB8C1
+      E9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE3E7
+      F7FF9AA7E3FF4C62CCFF364FC5FF344DC3FF465DC7FF95A1DEFFE1E5F6FFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    }
+  end
+  object SaveDialog1: TSaveDialog
+    left = 532
+    top = 463
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 495
+    top = 463
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 576
+    top = 463
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    LogEvents = []
+    Options = []
+    left = 704
+    top = 256
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = IBConnection1
+    Transaction = SQLTransaction1
+    SQL.Strings = (
+      'select * from client order by id'
+      ''
+    )
+    Options = []
+    Params = <>
+    left = 704
+    top = 288
+    object SQLQuery1Id1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1Name1: TStringField
+      DisplayWidth = 50
+      FieldKind = fkData
+      FieldName = 'Name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object SQLQuery1Address1: TStringField
+      DisplayWidth = 70
+      FieldKind = fkData
+      FieldName = 'Address'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 70
+    end
+    object SQLQuery1Phone1: TStringField
+      DisplayWidth = 20
+      FieldKind = fkData
+      FieldName = 'Phone'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object SQLQuery1Email1: TStringField
+      DisplayWidth = 100
+      FieldKind = fkData
+      FieldName = 'Email'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object SQLQuery1Status1: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Status'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = SQLQuery1Status1GetText
+    end
+    object SQLQuery1Recomended1: TStringField
+      DisplayWidth = 1
+      FieldKind = fkData
+      FieldName = 'Recomended'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      OnGetText = SQLQuery1Recomended1GetText
+      Size = 1
+    end
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = IBConnection1
+    Options = []
+    left = 704
+    top = 336
+  end
+end

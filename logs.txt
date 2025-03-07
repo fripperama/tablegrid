@@ -1,0 +1,3 @@
+Version 1.1
+
+Added property SelectedCol - column currently active in the grid.
